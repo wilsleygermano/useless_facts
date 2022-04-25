@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:useless_app/widgets/my_app_bar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -22,10 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
+      appBar: MyAppBar(),
       body: Center(
         child: Column(
 
