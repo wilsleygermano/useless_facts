@@ -1,45 +1,37 @@
-// ignore_for_file: unnecessary_this
-
 import 'dart:async';
 import 'dart:convert';
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 
-Future<GetUselessFacts> getUselessFact() async {
-  final dio = Dio();
+Future<Album> getUselessFact() async {
   const uselessURL = "https://uselessfacts.jsph.pl/random.json?language=en";
-  final response = await dio.get(uselessURL);
-  final json = jsonDecode(response.data.toString());
-  final uselessfacts = GetUselessFacts.fromJson(json as Map<String, dynamic>);
-  return uselessfacts;
+  final response = await http.get(Uri.parse(uselessURL));
+  if (response.statusCode == 200) {
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception('Failed to load facts');
+  }
 }
 
-class GetUselessFacts {
-  String? text;
-  String? source;
-  String? sourceUrl;
-  String? language;
+class Album {
+  final String text;
+  final String source;
+  final String sourceUrl;
+  final String language;
 
-  GetUselessFacts({
-    this.language,
-    this.source,
-    this.sourceUrl,
-    this.text,
+  const Album({
+    required this.language,
+    required this.source,
+    required this.sourceUrl,
+    required this.text,
   });
 
-    GetUselessFacts.fromJson(Map<String, dynamic> json) {
-    text = json['text'];
-    source = json['source'];
-    sourceUrl = json['source_url'];
-    language = json['language'];
-  }
-
-   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['text'] = text;
-    data['source'] = source;
-    data['source_url'] = sourceUrl;
-    data['language'] = language;
-    return data;
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      language: json['language'],
+      source: json['source'],
+      sourceUrl: json['source_url'],
+      text: json['text'],
+    );
   }
 
 }
