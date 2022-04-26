@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
@@ -32,11 +34,11 @@ class GetUselessFacts {
   }
 
    Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['text'] = this.text;
-    data['source'] = this.source;
-    data['source_url'] = this.sourceUrl;
-    data['language'] = this.language;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['text'] = text;
+    data['source'] = source;
+    data['source_url'] = sourceUrl;
+    data['language'] = language;
     return data;
   }
 
