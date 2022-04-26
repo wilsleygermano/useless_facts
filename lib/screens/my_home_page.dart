@@ -1,49 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:useless_app/data/get_useless_fact.dart';
 import 'package:useless_app/widgets/my_app_bar.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  final String? text;
+  final String? source;
+  final String? sourceUrl;
+  final String? language;
+
+  MyHomePage({
+    Key? key,
+    this.text,
+    this.source,
+    this.sourceUrl,
+    this.language,
+  }) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool loading = false;
+  late Future<Album> futureFactAlbum;
 
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
+  @override
+  void initState() {
+    super.initState();
+    futureFactAlbum = getUselessFact();
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: MyAppBar(),
       body: Center(
-        child: Column(
+        child: FutureBuilder<Album>(
+          future: futureFactAlbum,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(snapshot.data!.text),
+                ],
+              );
+            } else if (snapshot.hasError) {
+              return Text('${snapshot.error}');
+            }
 
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+            // By default, show a loading spinner.
+            return const Center(
+                child: CircularProgressIndicator(
+              color: Colors.purple,
+              strokeWidth: 8.0,
+            ));
+          },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
