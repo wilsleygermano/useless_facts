@@ -16,21 +16,7 @@ class _MyButtonsState extends State<MyButtons> {
         ElevatedButton(
           onPressed: () {},
           child: Icon(
-            Icons.clear,
-            color: Colors.red,
-            size: 48,
-          ),
-          style: ElevatedButton.styleFrom(
-            primary: Colors.white,
-            elevation: 8,
-            shape: CircleBorder(),
-            minimumSize: Size.square(80)
-          ),
-        ),
-        ElevatedButton(
-          onPressed: () {},
-          child: Icon(
-            Icons.star,
+            Icons.share,
             color: Colors.blue,
             size: 48,
           ),
@@ -44,8 +30,22 @@ class _MyButtonsState extends State<MyButtons> {
         ElevatedButton(
           onPressed: () {},
           child: Icon(
-            Icons.favorite,
+            Icons.shuffle,
             color: Colors.green,
+            size: 48,
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.white,
+            elevation: 8,
+            shape: CircleBorder(),
+            minimumSize: Size.square(80)
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.favorite,
+            color: Colors.red,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
