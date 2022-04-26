@@ -43,6 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(snapshot.data!.text),
+                  Container(
+                    height: 300,
+                    width: 300,
+                    child: Image.network(
+                      'https://picsum.photos/300',
+                      // fit: BoxFit.fill,
+                    ),
+                  )
                 ],
               );
             } else if (snapshot.hasError) {
