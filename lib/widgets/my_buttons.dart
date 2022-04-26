@@ -28,13 +28,7 @@ class _MyButtonsState extends State<MyButtons> {
               minimumSize: Size.square(80)),
         ),
         ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => MyHomePage(),
-              ),
-            );
-          },
+          onPressed: () {},
           child: Icon(
             Icons.shuffle,
             color: Colors.green,
