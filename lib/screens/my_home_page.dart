@@ -3,6 +3,7 @@ import 'package:useless_app/data/get_useless_fact.dart';
 import 'package:useless_app/design/my_colors.dart';
 import 'package:useless_app/design/my_fonts.dart';
 import 'package:useless_app/widgets/fact_card.dart';
+import 'package:useless_app/widgets/my_buttons.dart';
 import 'package:useless_app/widgets/my_logo.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -62,6 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           factSource: snapshot.data!.source,
                         ),
                       ),
+                      const SizedBox(height: 16,),
+                      MyButtons(),
                     ],
                   );
                 } else if (snapshot.hasError) {
