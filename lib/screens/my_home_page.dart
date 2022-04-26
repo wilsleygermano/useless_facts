@@ -7,17 +7,11 @@ import 'package:useless_app/widgets/my_buttons.dart';
 import 'package:useless_app/widgets/my_logo.dart';
 
 class MyHomePage extends StatefulWidget {
-  // final String? text;
-  // final String? source;
-  // final String? sourceUrl;
-  // final String? language;
+  
 
   MyHomePage({
     Key? key,
-    // this.text,
-    // this.source,
-    // this.sourceUrl,
-    // this.language,
+
   }) : super(key: key);
 
   @override

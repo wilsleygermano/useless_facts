@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:useless_app/screens/my_home_page.dart';
 
 class MyButtons extends StatefulWidget {
   const MyButtons({Key? key}) : super(key: key);
@@ -21,25 +22,29 @@ class _MyButtonsState extends State<MyButtons> {
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
-            elevation: 8,
-            shape: CircleBorder(),
-            minimumSize: Size.square(80)
-          ),
+              primary: Colors.white,
+              elevation: 8,
+              shape: CircleBorder(),
+              minimumSize: Size.square(80)),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => MyHomePage(),
+              ),
+            );
+          },
           child: Icon(
             Icons.shuffle,
             color: Colors.green,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
-            elevation: 8,
-            shape: CircleBorder(),
-            minimumSize: Size.square(80)
-          ),
+              primary: Colors.white,
+              elevation: 8,
+              shape: CircleBorder(),
+              minimumSize: Size.square(80)),
         ),
         ElevatedButton(
           onPressed: () {},
@@ -49,11 +54,10 @@ class _MyButtonsState extends State<MyButtons> {
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
-            elevation: 8,
-            shape: CircleBorder(),
-            minimumSize: Size.square(80)
-          ),
+              primary: Colors.white,
+              elevation: 8,
+              shape: CircleBorder(),
+              minimumSize: Size.square(80)),
         )
       ],
     );
