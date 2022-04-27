@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:screenshot/screenshot.dart';
+import 'package:useless_app/controller/share_fact_controller.dart';
 import 'package:useless_app/data/get_useless_fact.dart';
 import 'package:useless_app/widgets/fact_card.dart';
 import 'package:useless_app/widgets/my_buttons.dart';
@@ -18,11 +20,14 @@ class MyHomePage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class MyHomePageState extends State<MyHomePage> {
-  bool loading = false;
+class _MyHomePageState extends State<MyHomePage> {
+
+  ScreenshotController screenshotController = ScreenshotController();
+  ShareFactController shareFactController = ShareFactController(); 
+
   late Future<Album> futureFactAlbum;
 
   @override
@@ -59,17 +64,20 @@ class MyHomePageState extends State<MyHomePage> {
                         height: 16,
                       ),
                       Expanded(
-                        child: FactCard(
-                          factText: widget.text!,
-                          factSource: widget.source!,
-                          imageUrl:
-                              'https://picsum.photos/600?random=${widget.counter}',
+                        child: Screenshot(
+                          controller: screenshotController,
+                          child: FactCard(
+                            factText: widget.text!,
+                            factSource: widget.source!,
+                            imageUrl:
+                                'https://picsum.photos/600?random=${widget.counter}',
+                          ),
                         ),
                       ),
                       const SizedBox(
                         height: 16,
                       ),
-                      MyButtons(),
+                      MyButtons(onShareTap: () async => await captureScreen(),),
                     ],
                   );
                 } else if (snapshot.hasError) {
@@ -91,4 +99,8 @@ class MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+   Future<void> captureScreen() async {
+    await shareFactController.screenCapture(screenshotController);
+  }  
 }
