@@ -35,12 +35,15 @@ class _MyButtonsState extends State<MyButtons> {
         ElevatedButton(
           onPressed: () {
             int randomNumber = Random().nextInt(max) + 1;
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
-                  builder: (context) => MyHomePage(
-                        counter: randomNumber,
-                      )),
+              PageRouteBuilder(
+                pageBuilder: (context, animation1, animation2) => MyHomePage(
+                  counter: randomNumber,
+                ),
+                transitionDuration: Duration.zero,
+                reverseTransitionDuration: Duration.zero,
+              ),
             );
           },
           child: const Icon(
