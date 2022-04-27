@@ -7,9 +7,9 @@ class FactCard extends StatefulWidget {
   const FactCard({
     Key? key,
     required this.factText,
-    required this.factSource,
+    required this.factSource, required this.imageUrl,
   }) : super(key: key);
-  final String imageUrl = "https://picsum.photos/600";
+  final String imageUrl;
   final String factText;
   final String factSource;
 

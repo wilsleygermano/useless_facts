@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:useless_app/data/get_useless_fact.dart';
-import 'package:useless_app/design/my_colors.dart';
-import 'package:useless_app/design/my_fonts.dart';
 import 'package:useless_app/widgets/fact_card.dart';
 import 'package:useless_app/widgets/my_buttons.dart';
 import 'package:useless_app/widgets/my_logo.dart';
 
 class MyHomePage extends StatefulWidget {
-  // final String? text;
-  // final String? source;
-  // final String? sourceUrl;
-  // final String? language;
+  String? text;
+  String? source;
+  int counter;
 
   MyHomePage({
     Key? key,
-    // this.text,
-    // this.source,
-    // this.sourceUrl,
-    // this.language,
+    this.source,
+    this.text,
+    this.counter = 1,
   }) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   bool loading = false;
   late Future<Album> futureFactAlbum;
 
@@ -53,17 +50,25 @@ class _MyHomePageState extends State<MyHomePage> {
               future: futureFactAlbum,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
+                  widget.source = snapshot.data!.source;
+                  widget.text = snapshot.data!.text;
                   return Column(
                     children: [
                       const MyLogo(),
-                      const SizedBox(height: 16,),
+                      const SizedBox(
+                        height: 16,
+                      ),
                       Expanded(
                         child: FactCard(
-                          factText: snapshot.data!.text,
-                          factSource: snapshot.data!.source,
+                          factText: widget.text!,
+                          factSource: widget.source!,
+                          imageUrl:
+                              'https://picsum.photos/600?random=${widget.counter}',
                         ),
                       ),
-                      const SizedBox(height: 16,),
+                      const SizedBox(
+                        height: 16,
+                      ),
                       MyButtons(),
                     ],
                   );
@@ -72,11 +77,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 }
 
                 // By default, show a loading spinner.
-                return const Center(
-                    child: CircularProgressIndicator(
-                  color: Colors.purple,
-                  strokeWidth: 8.0,
-                ));
+                return const 
+                Center(
+                  child: SpinKitDoubleBounce(
+                    color: Colors.black,
+                    size: 100,
+                  ),
+                );
               },
             ),
           ),
