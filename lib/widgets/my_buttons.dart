@@ -23,14 +23,14 @@ class _MyButtonsState extends State<MyButtons> {
           onPressed: widget.onShareTap,
           child: const Icon(
             Icons.share,
-            color: Colors.blue,
+            color: Colors.white,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-              primary: Colors.white,
+              primary: Colors.blue,
               elevation: 8,
               shape: const CircleBorder(),
-              minimumSize: const Size.square(80)),
+              minimumSize: const Size.square(60)),
         ),
         ElevatedButton(
           onPressed: () {
@@ -48,14 +48,14 @@ class _MyButtonsState extends State<MyButtons> {
           },
           child: const Icon(
             Icons.shuffle,
-            color: Colors.green,
+            color: Colors.white,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-              primary: Colors.white,
+              primary: Colors.green,
               elevation: 8,
               shape: const CircleBorder(),
-              minimumSize: const Size.square(80)),
+              minimumSize: const Size.square(60)),
         ),
       ],
     );
