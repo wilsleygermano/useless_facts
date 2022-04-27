@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:useless_app/data/get_useless_fact.dart';
 import 'package:useless_app/widgets/fact_card.dart';
 import 'package:useless_app/widgets/my_buttons.dart';
@@ -21,7 +22,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  
   bool loading = false;
   late Future<Album> futureFactAlbum;
 
@@ -62,7 +62,8 @@ class MyHomePageState extends State<MyHomePage> {
                         child: FactCard(
                           factText: widget.text!,
                           factSource: widget.source!,
-                          imageUrl: 'https://picsum.photos/600?grayscale&random=${widget.counter}',
+                          imageUrl:
+                              'https://picsum.photos/600?random=${widget.counter}',
                         ),
                       ),
                       const SizedBox(
@@ -76,11 +77,13 @@ class MyHomePageState extends State<MyHomePage> {
                 }
 
                 // By default, show a loading spinner.
-                return const Center(
-                    child: CircularProgressIndicator(
-                  color: Colors.purple,
-                  strokeWidth: 8.0,
-                ));
+                return const 
+                Center(
+                  child: SpinKitDoubleBounce(
+                    color: Colors.black,
+                    size: 100,
+                  ),
+                );
               },
             ),
           ),
