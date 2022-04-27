@@ -3,7 +3,9 @@ import 'package:useless_app/screens/my_home_page.dart';
 import 'dart:math';
 
 class MyButtons extends StatefulWidget {
-  const MyButtons({Key? key}) : super(key: key);
+  const MyButtons({Key? key, required this.onShareTap}) : super(key: key);
+
+  final Function() onShareTap;
 
   @override
   State<MyButtons> createState() => _MyButtonsState();
@@ -18,7 +20,7 @@ class _MyButtonsState extends State<MyButtons> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: widget.onShareTap,
           child: Icon(
             Icons.share,
             color: Colors.blue,
