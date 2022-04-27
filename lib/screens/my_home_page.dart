@@ -7,6 +7,7 @@ import 'package:useless_app/widgets/fact_card.dart';
 import 'package:useless_app/widgets/my_buttons.dart';
 import 'package:useless_app/widgets/my_logo.dart';
 
+// ignore: must_be_immutable
 class MyHomePage extends StatefulWidget {
   String? text;
   String? source;
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: FutureBuilder<Album>(
               future: futureFactAlbum,
               builder: (context, snapshot) {

@@ -8,7 +8,7 @@ class MyLogo extends StatelessWidget {
     return Container(
       height: 60,
       width: 150,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('lib/images/Useless.png'),
           fit: BoxFit.cover,
