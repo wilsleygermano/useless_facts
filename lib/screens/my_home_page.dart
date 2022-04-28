@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:screenshot/screenshot.dart';
-import 'package:useless_app/controller/share_fact_controller.dart';
 import 'package:useless_app/data/get_useless_fact.dart';
 import 'package:useless_app/widgets/my_future_builder.dart';
 
@@ -18,8 +16,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ScreenshotController screenshotController = ScreenshotController();
-  ShareFactController shareFactController = ShareFactController();
 
   late Future<Album> futureFactAlbum;
 
