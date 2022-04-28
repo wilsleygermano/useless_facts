@@ -12,7 +12,7 @@ class MyButtons extends StatefulWidget {
 }
 
 class _MyButtonsState extends State<MyButtons> {
-  int _max = 1000;
+  final int _max = 1000;
 
   @override
   Widget build(BuildContext context) {
