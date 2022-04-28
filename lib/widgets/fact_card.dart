@@ -24,7 +24,6 @@ class FactCard extends StatefulWidget {
 
 class _FactCardState extends State<FactCard> {
   @override
-
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
@@ -35,7 +34,9 @@ class _FactCardState extends State<FactCard> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(widget.imageUrl), fit: BoxFit.cover),
+              image: NetworkImage(widget.imageUrl),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Container(
             decoration: const BoxDecoration(
