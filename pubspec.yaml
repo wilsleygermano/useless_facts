@@ -43,6 +43,7 @@ dependencies:
   share_plus: ^4.0.4
   flutter_native_splash: ^2.1.6
   flutter_launcher_icons: ^0.9.2
+  bordered_text: ^2.0.0
 
 
 flutter_native_splash:

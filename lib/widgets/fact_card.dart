@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:bordered_text/bordered_text.dart';
 import '../design/my_colors.dart';
 import '../design/my_fonts.dart';
 
@@ -49,14 +49,18 @@ class _FactCardState extends State<FactCard> {
                 Row(
                   children: [
                     Flexible(
-                      child: Text(
-                        widget.factText,
-                        style: TextStyle(
-                          fontFamily: MyFonts.factFont,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: MyColors.whiteColor,
-                          overflow: TextOverflow.fade,
+                      child: BorderedText(
+                        strokeWidth: 5.0,
+                        strokeColor: Colors.black,
+                        child: Text(
+                          widget.factText,
+                          style: TextStyle(
+                            fontFamily: MyFonts.factFont,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: MyColors.whiteColor,
+                            overflow: TextOverflow.fade,
+                          ),
                         ),
                       ),
                     ),
