@@ -12,12 +12,14 @@ class MyHomePage extends StatefulWidget {
   String? text;
   String? source;
   int counter;
+  String? sourceUrl;
 
   MyHomePage({
     Key? key,
     this.source,
     this.text,
     this.counter = 1,
+    this.sourceUrl,
   }) : super(key: key);
 
   @override
@@ -58,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 if (snapshot.hasData) {
                   widget.source = snapshot.data!.source;
                   widget.text = snapshot.data!.text;
+                  widget.sourceUrl = snapshot.data!.sourceUrl;
                   return Column(
                     children: [
                       const MyLogo(),
@@ -68,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Screenshot(
                           controller: screenshotController,
                           child: FactCard(
+                            sourceUrl: widget.sourceUrl!,
                             factText: widget.text!,
                             factSource: widget.source!,
                             imageUrl:
