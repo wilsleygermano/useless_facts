@@ -12,7 +12,7 @@ class MyButtons extends StatefulWidget {
 }
 
 class _MyButtonsState extends State<MyButtons> {
-  int max = 1000;
+  int _max = 1000;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _MyButtonsState extends State<MyButtons> {
         ),
         ElevatedButton(
           onPressed: () {
-            int randomNumber = Random().nextInt(max) + 1;
+            int randomNumber = Random().nextInt(_max) + 1;
             Navigator.pushReplacement(
               context,
               PageRouteBuilder(
