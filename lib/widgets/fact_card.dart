@@ -39,18 +39,19 @@ class _FactCardState extends State<FactCard> {
             ),
           ),
           child: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [
-                    Colors.transparent,
-                    Colors.black,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  stops: [
-                    0.5,
-                    1,
-                  ]),
+                colors: [
+                  MyColors.transparent,
+                  MyColors.blackColor,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: const [
+                  0.5,
+                  1,
+                ],
+              ),
             ),
             child: Container(
               padding: const EdgeInsets.all(20),
@@ -62,7 +63,7 @@ class _FactCardState extends State<FactCard> {
                       Flexible(
                         child: BorderedText(
                           strokeWidth: 5.0,
-                          strokeColor: Colors.black,
+                          strokeColor: MyColors.blackColor,
                           child: Text(
                             widget.factText,
                             style: TextStyle(

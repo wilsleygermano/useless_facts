@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:useless_app/controller/fact_api_url.dart';
 import 'package:useless_app/classes/my_spinkit.dart';
+import 'package:useless_app/controller/capture_screen.dart';
 import '../controller/share_fact_controller.dart';
 import '../data/get_useless_fact.dart';
 import 'fact_card.dart';
@@ -61,7 +63,7 @@ class _MyFutureBuilderState extends State<MyFutureBuilder> {
                     factText: widget.text!,
                     factSource: widget.source!,
                     imageUrl:
-                        'https://picsum.photos/600?random=${widget.counter}',
+                        factApiUrl(widget.counter),
                   ),
                 ),
               ),
@@ -69,7 +71,8 @@ class _MyFutureBuilderState extends State<MyFutureBuilder> {
                 height: 16,
               ),
               MyButtons(
-                onShareTap: () async => await captureScreen(),
+                onShareTap: () async => await captureScreen(
+                    shareFactController, screenshotController),
               ),
             ],
           );
@@ -82,8 +85,4 @@ class _MyFutureBuilderState extends State<MyFutureBuilder> {
       },
     );
   }
-
-  Future<void> captureScreen() async {
-    await shareFactController.screenCapture(screenshotController);
-  }  
 }

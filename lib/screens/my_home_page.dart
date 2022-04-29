@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:useless_app/data/get_useless_fact.dart';
+import 'package:useless_app/design/my_colors.dart';
 import 'package:useless_app/widgets/my_future_builder.dart';
 
 // ignore: must_be_immutable
@@ -26,11 +27,11 @@ class _MyHomePageState extends State<MyHomePage> {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.grey.shade200, Colors.black],
+          colors: [MyColors.shadeGrey, MyColors.blackColor],
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: MyColors.transparent,
         body: SafeArea(
           child: Container(
             padding: const EdgeInsets.all(16),
