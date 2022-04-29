@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:useless_app/design/my_colors.dart';
 import 'package:useless_app/screens/my_home_page.dart';
 import 'dart:math';
 
@@ -21,13 +22,13 @@ class _MyButtonsState extends State<MyButtons> {
       children: [
         ElevatedButton(
           onPressed: widget.onShareTap,
-          child: const Icon(
+          child: Icon(
             Icons.share,
-            color: Colors.white,
+            color: MyColors.whiteColor,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-              primary: Colors.blue,
+              primary: MyColors.blue,
               elevation: 8,
               shape: const CircleBorder(),
               minimumSize: const Size.square(60)),
@@ -46,13 +47,13 @@ class _MyButtonsState extends State<MyButtons> {
               ),
             );
           },
-          child: const Icon(
+          child: Icon(
             Icons.shuffle,
-            color: Colors.white,
+            color: MyColors.whiteColor,
             size: 48,
           ),
           style: ElevatedButton.styleFrom(
-              primary: Colors.green,
+              primary: MyColors.green,
               elevation: 8,
               shape: const CircleBorder(),
               minimumSize: const Size.square(60)),
