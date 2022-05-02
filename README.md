@@ -1,5 +1,5 @@
 # Useless App
-*Don't take life too serius*.
+*Don't take life too serious*.
 
 <img src="./screenshots/screenshot.png" width="200">
 
