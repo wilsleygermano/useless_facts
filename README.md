@@ -5,7 +5,7 @@
 
 This project was presented through the 6th week of Snow Academy (a Snow Man Labs initiative).
 
-Its intent is very simple: the user presses the "random" button to get a useless, but true, fact. This whole process is possible thanks to the "Random Useless Facts" API (https://uselessfacts.jsph.pl/).
+Its intent is very simple: the user presses the "random" button to get an useless, but true, fact. This whole process is possible thanks to the "Random Useless Facts" API (https://uselessfacts.jsph.pl/).
 
 The app also shows a random image, which is not related at all to the fact. These images are provided by "https://picsum.photos/".
 
