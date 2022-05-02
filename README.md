@@ -3,7 +3,7 @@
 
 <img src="./screenshots/screenshot.png" width="200">
 
-This project was presented through the 6th week of Snow Academy (a Snow Man Labs initiative).
+This project was presented through week six of Snow Academy (a Snow Man Labs initiative).
 
 Its intent is very simple: the user presses the "random" button to get an useless, but true, fact. This whole process is possible thanks to the "Random Useless Facts" API (https://uselessfacts.jsph.pl/).
 
