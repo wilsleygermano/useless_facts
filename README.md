@@ -1,7 +1,7 @@
 # Useless App
 *Don't take life too serious*.
 
-<img src="./screenshots/screenshot.png" width="200">
+<img src="./screenshots/screenshot.png" width="400">
 
 This project was presented through week six of Snow Academy (a Snow Man Labs initiative).
 
