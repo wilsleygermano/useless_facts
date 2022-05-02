@@ -1,16 +1,17 @@
-# useless_app
+# Useless App
+*Don't take life too serius*.
 
-A new Flutter project.
+<img src="./screenshots/screenshot.png" width="200">
 
-## Getting Started
+This project was presented through the 6th week of Snow Academy (a Snow Man Labs initiative).
 
-This project is a starting point for a Flutter application.
+Its intent is very simple: the user presses the "random" button to get a useless, but true, fact. This whole process is possible thanks to the "Random Useless Facts" API (https://uselessfacts.jsph.pl/).
 
-A few resources to get you started if this is your first Flutter project:
+The app also shows a random image, which is not related at all to the fact. These images are provided by "https://picsum.photos/".
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Finally, the user has an option to share the image. To make that possible, the "screenshot" flutter package (https://pub.dev/packages/screenshot) was used.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To run this project, besides cloning this repo, you must have Dart and Flutter installed on your PC, as well an IDE of your choice (i.e. Android Studio or VSCode).
+
+Have fun!
+
