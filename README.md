@@ -11,7 +11,7 @@ The app also shows a random image, which is not related at all to the fact. Thes
 
 Finally, the user has an option to share the image. To make that possible, the "screenshot" flutter package (https://pub.dev/packages/screenshot) was used.
 
-To run this project, besides cloning this repo, you must have Dart and Flutter installed on your PC, as well an IDE of your choice (i.e. Android Studio or VSCode).
+To run this project, besides cloning this repo, you must have Dart and Flutter installed on your PC, as well an IDE of your choice (e.g. Android Studio or VSCode).
 
 Have fun!
 
