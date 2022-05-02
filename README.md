@@ -1,4 +1,4 @@
-# Useless App
+# Useless Facts App
 *Don't take life too serious*.
 
 <img src="./screenshots/screenshot.png" width="300" class="center">
